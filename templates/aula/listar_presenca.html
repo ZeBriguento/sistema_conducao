@@ -1,0 +1,58 @@
+{% extends 'inicio/index.html' %}
+<!-- {% load static %} -->
+
+
+{% block title %} Presença de Aulas {% endblock title %}
+
+
+{% block title-content %}
+<div class="card">
+    <!-- <div class="card-header">
+      Featured
+    </div> -->
+    <div class="card-body">
+      <h5 class="card-title">Lista de Presenças em aulas</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <a href="{% url 'aula:criar_presenca' %}" class="btn btn-primary">Nova Presença</a>
+    </div>
+    <!-- <div class="card-footer text-muted">
+      2 days ago
+    </div> -->
+  </div>
+{% endblock title-content %}
+
+{% block content %}
+
+{% if presencas %}
+<div class="bd-example" style="padding-top: 30px;">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Aluno</th>
+        <th scope="col">Instrutor</th>
+        <th scope="col">Dia</th>
+      </tr>
+      </thead>
+      <tbody>
+    
+        {% for presenca in presencas %}
+        <tr>
+            <td>{{ presenca.id }}</td>
+            <td>{{ presenca.aluno}}</td>
+            <td>{{ presenca.instrutor }}</td> 
+            <td>{{ presenca.dia }}</td> 
+            <td>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr> 
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    </div>
+{% endif %}
+    
+
+{% endblock content %}

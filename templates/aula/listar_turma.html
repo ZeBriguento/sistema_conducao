@@ -1,0 +1,60 @@
+{% extends 'inicio/index.html' %}
+<!-- {% load static %} -->
+
+
+{% block title %} Turmas {% endblock title %}
+
+
+{% block title-content %}
+<div class="card">
+    <!-- <div class="card-header">
+      Featured
+    </div> -->
+    <div class="card-body">
+      <h5 class="card-title">Lista de Turmas Cadastradas</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <a href="{% url 'aula:criar_turma' %}" class="btn btn-primary">Nova Turma</a>
+    </div>
+    <!-- <div class="card-footer text-muted">
+      2 days ago
+    </div> -->
+  </div>
+{% endblock title-content %}
+
+{% block content %}
+
+{% if turmas %}
+<div class="bd-example" style="padding-top: 30px;">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sala</th>
+        <th scope="col">Lotação Máxima</th>
+        <th scope="col">Opções</th>
+        
+      </tr>
+      </thead>
+      <tbody>
+    
+        {% for turma in turmas %}
+        <tr>
+            <td>{{ turma.id }}</td>
+            <td>{{ turma.nome_turma }}</td>
+            <td>{{ turma.numero_sala }}</td>
+            <td>{{ turma.max_lotacao }}</td>
+            <td>
+              <a href="#" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+              <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr> 
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    </div>
+{% endif %}
+    
+
+{% endblock content %}

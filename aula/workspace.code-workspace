@@ -1,0 +1,49 @@
+{
+	"folders": [
+		{
+			"name": "Javascript",
+			"path": "../../../Javascript/Javascript"
+		},
+		{
+			"name": "situacao5SDPI",
+			"path": "../../../../UCAN/SDP I/situacao5SDPI"
+		},
+		{
+			"name": "Multimidia",
+			"path": "../../../../UCAN/Multimidia"
+		},
+		{
+			"name": "tutorialDjango",
+			"path": "../../tutorialDjango"
+		},
+		{
+			"name": "django_blog",
+			"path": "../../django_blog"
+		},
+		{
+			"name": "biblioteca",
+			"path": "../../biblioteca"
+		},
+		{
+			"name": "iniciando_node",
+			"path": "../../../Javascript/Node Js/iniciando_node"
+		},
+		{
+			"name": "task-manager",
+			"path": "../../../Javascript/Node Js/task-manager"
+		},
+		{
+			"name": "projecto_multimidia",
+			"path": "../../../../UCAN/Multimidia/projecto_multimidia"
+		},
+		{
+			"path": "../../escolaLIG"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Multimidia"
+	}
+}

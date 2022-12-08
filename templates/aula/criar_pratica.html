@@ -1,0 +1,48 @@
+{% extends 'inicio/index.html' %}
+{% block title %} Criar Aulas Praticas {% endblock title %}
+
+
+{% block title-content %}
+    
+{% endblock title-content %}
+    
+
+{% block content %}
+<div class="card" style="width: 450px; margin: 0 auto;">
+    <!-- <div class="card-header">
+      Featured
+    </div> -->
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Criar Aula</h5>
+        <form action="#" style="padding-top: 20px;" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="validationServer01" class="form-label">{{form.data_aula_pratica.label}}</label>
+                {{form.data_aula_pratica}}
+               
+            </div>
+            <div class="form-group">
+                <label for="validationServer01" class="form-label">{{form.hora_inicial.label}}</label>
+                {{form.hora_inicial}}
+            </div>
+            <div class="form-group">
+                <label for="validationServer01" class="form-label">{{form.hora_final.label}}</label>
+                {{form.hora_final}}
+            </div>
+            <div class="form-group">
+              <label for="validationServer01" class="form-label">{{form.tipo_aula_pratica.label}}</label>
+              {{form.tipo_aula_pratica}}
+          </div>
+            <div class="text-center">
+              <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Salvar</button>
+              <button class="btn btn-danger" type="reset" style="margin-top: 20px;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="card-footer text-muted">
+      2 days ago
+    </div> -->
+  </div>
+{% endblock content %}
+
+    

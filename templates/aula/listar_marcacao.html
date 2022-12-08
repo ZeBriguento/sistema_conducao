@@ -1,0 +1,64 @@
+{% extends 'inicio/index.html' %}
+<!-- {% load static %} -->
+
+
+{% block title %} Marcação de Aulas {% endblock title %}
+
+
+{% block title-content %}
+<div class="card">
+    <!-- <div class="card-header">
+      Featured
+    </div> -->
+    <div class="card-body">
+      <h5 class="card-title">Lista de Marcação de aulas Cadastradas</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <a href="{% url 'aula:criar_marcacao' %}" class="btn btn-primary">Nova Marcação</a>
+    </div>
+    <!-- <div class="card-footer text-muted">
+      2 days ago
+    </div> -->
+  </div>
+{% endblock title-content %}
+
+{% block content %}
+
+{% if marcacoes %}
+<div class="bd-example" style="padding-top: 30px;">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Aluno</th>
+        <th scope="col">Instrutor</th>
+        <th scope="col">Dia</th>
+        <th scope="col">Viatura</th>
+        <th scope="col">Opções</th>
+        
+      </tr>
+      </thead>
+      <tbody>
+    
+        {% for marcacao in marcacaos %}
+        <tr>
+            <td>{{ marcacao.id }}</td>
+            <td>{{ user.username}}</td>
+            <td>{{ marcacao.instrutor }}</td>
+            <td>{{ marcacao.dia }}</td>
+            <td>{{ marcacao.viatura }}</td>
+            <td>{{ marcacao.hora_final }}</td>
+<!--             
+            <td>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            </td> -->
+        </tr> 
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    </div>
+{% endif %}
+    
+
+{% endblock content %}

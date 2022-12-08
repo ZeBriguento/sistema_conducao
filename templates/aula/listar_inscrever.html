@@ -1,0 +1,58 @@
+{% extends 'inicio/index.html' %}
+<!-- {% load static %} -->
+
+
+{% block title %} Inscrição em Aulas {% endblock title %}
+
+
+{% block title-content %}
+<div class="card">
+    <!-- <div class="card-header">
+      Featured
+    </div> -->
+    <div class="card-body">
+      <h5 class="card-title">Lista de Inscrições em aulas</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <a href="{% url 'aula:criar_inscrever' %}" class="btn btn-primary">Nova Inscrição</a>
+    </div>
+    <!-- <div class="card-footer text-muted">
+      2 days ago
+    </div> -->
+  </div>
+{% endblock title-content %}
+
+{% block content %}
+
+{% if inscritos %}
+<div class="bd-example" style="padding-top: 30px;">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Aluno</th>
+        <th scope="col">Aula</th>
+        <th scope="col">Turma</th>
+      </tr>
+      </thead>
+      <tbody>
+    
+        {% for inscrito in inscritos %}
+        <tr>
+            <td>{{ inscrito.id }}</td>
+            <td>{{ user.username}}</td>
+            <td>{{ inscrito.tipo_aula }}</td> 
+            <td>{{ inscrito.turma }}</td> 
+            <td>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr> 
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    </div>
+{% endif %}
+    
+
+{% endblock content %}

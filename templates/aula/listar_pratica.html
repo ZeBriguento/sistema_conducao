@@ -1,0 +1,63 @@
+{% extends 'inicio/index.html' %}
+<!-- {% load static %} -->
+
+
+{% block title %} Aulas Praticas {% endblock title %}
+
+
+{% block title-content %}
+<div class="card">
+    <!-- <div class="card-header">
+      Featured
+    </div> -->
+    <div class="card-body">
+      <h5 class="card-title">Lista de Aulas Pratica Cadastradas</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <a href="{% url 'aula:criar_pratica' %}" class="btn btn-primary">Nova Aula</a>
+    </div>
+    <!-- <div class="card-footer text-muted">
+      2 days ago
+    </div> -->
+  </div>
+{% endblock title-content %}
+
+{% block content %}
+
+{% if praticas %}
+<div class="bd-example" style="padding-top: 30px;">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Data Aula</th>
+        <th scope="col">Hora Inicial</th>
+        <th scope="col">Hora Final</th>
+        <th scope="col">Tipo Aula</th>
+        <th scope="col">Opções</th>
+        
+      </tr>
+      </thead>
+      <tbody>
+    
+        {% for pratica in praticas %}
+        <tr>
+            <td>{{ pratica.id }}</td>
+            <td>{{ pratica.data_aula_pratica }}</td>
+            <td>{{ pratica.hora_inicial }}</td>
+            <td>{{ pratica.hora_final }}</td>
+            <td>{{ pratica.tipo_aula_pratica }}</td>
+            
+            <td>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-pen"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr> 
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    </div>
+{% endif %}
+    
+
+{% endblock content %}
